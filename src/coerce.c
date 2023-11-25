@@ -382,11 +382,6 @@ coerce_into_file(struct workspace *wk, struct coerce_into_files_ctx *ctx, obj va
 			}
 			break;
 		case mode_output:
-			if (!path_is_basename(get_cstr(wk, val))) {
-				interp_error(wk, ctx->node, "output file '%s' contains path separators", get_cstr(wk, val));
-				return ir_err;
-			}
-
 			path_join(wk, &buf, ctx->output_dir, get_cstr(wk, val));
 			make_obj(wk, file, obj_file);
 			*get_obj_file(wk, *file) = sbuf_into_str(wk, &buf);
