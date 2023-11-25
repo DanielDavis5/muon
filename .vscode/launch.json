@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "setup current meson.build",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/builddir/muon",
+      "args": ["setup", "builddir"],
+      "cwd": "${fileDirname}",
+      "preLaunchTask": "build"
+    }
+  ]
+}
